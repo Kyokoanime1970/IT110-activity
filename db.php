@@ -1,5 +1,4 @@
 <?php
-// Update these settings to match your local PostgreSQL setup.
 $host = 'localhost';
 $port = '5432';
 $dbname = 'classwall';
@@ -14,7 +13,6 @@ try {
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ]);
 } catch (PDOException $e) {
-    // Avoid showing database credentials or internal details to visitors.
     http_response_code(500);
     exit('Could not connect to the database. Check your db.php settings.');
 }
